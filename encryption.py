@@ -7,56 +7,38 @@ alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q",
 characterList = []
 def encryption():
     text = input("Şifrelenecek olan kelimeyi girin: ")
-    text = text.lower()
-    text = text.split()
+    text = text.lower().split()
     for a in text:
         k = 0
         for i in a:
              k = k + 1 
-             characterList.append(alphabet[alphabet.index(i) + k])
+             if i in alphabet: characterList.append(alphabet[alphabet.index(i) + k])
+             else: characterList.append(i)
         characterList.append('-')   
-    newtext = str(characterList)
-    newtext = newtext.replace("[","")
-    newtext = newtext.replace("]","")
-    newtext = newtext.replace(",","")
-    newtext = newtext.replace("'","")
-    newtext = newtext.replace(" ","")
+    newtext = "".join(characterList)
     newtext = newtext.replace("-"," ")
-
     print(newtext)         
             
 
 newCharacterList = []
 def decryption():
     textOne = input("decript kodunu girin: ")
-    textOne = textOne.split()
+    textOne = textOne.lower().split()
     for a in textOne:
         k = 0
         for i in a:
             k = k + 1
-            newCharacterList.append(alphabet[alphabet.index(i) - k])
+            if i in alphabet: newCharacterList.append(alphabet[alphabet.index(i) - k])
+            else: newCharacterList.append(i)
         newCharacterList.append("-")
-    newtext = str(newCharacterList)
-    newtext = newtext.replace("[","")
-    newtext = newtext.replace("]","")
-    newtext = newtext.replace(",","")
-    newtext = newtext.replace("'","")
-    newtext = newtext.replace(" ","")
+    newtext = "".join(newCharacterList)
     newtext = newtext.replace("-"," ")
-    
-
     print(newtext)    
 
 chose = input("Bir metin şifrelemek için 'T',bir şifre çözmek için ise 'F' tuşuna basın: ")
 chose = chose.lower()
-if(chose == "t"):
-    encryption()
-elif(chose == "f"):
-    decryption()
-
-
-
-
+if(chose == "t"):encryption()
+elif(chose == "f"):decryption()
 
 input("Kapatmak için herhangi 'Enter' tuşuna basın")
 
