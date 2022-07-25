@@ -35,8 +35,7 @@ def decryption():
     newtext = newtext.replace("-"," ")
     print(newtext)    
 
-chose = input("Bir metin şifrelemek için 'T',bir şifre çözmek için ise 'F' tuşuna basın: ")
-chose = chose.lower()
+chose = input("Bir metin şifrelemek için 'T',bir şifre çözmek için ise 'F' tuşuna basın: ").lower()
 if(chose == "t"):encryption()
 elif(chose == "f"):decryption()
 
