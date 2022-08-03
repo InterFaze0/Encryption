@@ -1,10 +1,7 @@
-alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s"
-,"t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9"]
+alphabet,characterList,newCharacterList = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s"
+,"t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9"],[],[]
 
 
-
-
-characterList = []
 def encryption():
     text = input("Şifrelenecek olan kelimeyi girin: ")
     text = text.lower().split()
@@ -19,8 +16,6 @@ def encryption():
     newtext = newtext.replace("-"," ")
     print(newtext)         
             
-
-newCharacterList = []
 def decryption():
     textOne = input("decript kodunu girin: ")
     textOne = textOne.lower().split()
@@ -39,7 +34,7 @@ chose = input("Bir metin şifrelemek için 'T',bir şifre çözmek için ise 'F'
 if(chose == "t"):encryption()
 elif(chose == "f"):decryption()
 
-input("Kapatmak için herhangi 'Enter' tuşuna basın")
+input("push the any button for close console")
 
 
 
